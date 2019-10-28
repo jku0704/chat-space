@@ -11,7 +11,7 @@
 Association
 
  belongs_to :group
- belongs_to :users
+ belongs_to :user
 
 **usersテーブル**
 
@@ -38,5 +38,14 @@ Associatiuon
  has_many :users, through: groups_users
  has_many :messeges
 
+**groups_usersテーブル**
 
- 
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+Association
+
+belongs_to :group
+belongs_to :user
