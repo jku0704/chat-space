@@ -1,0 +1,66 @@
+.wrapper
+
+  .chat-side
+    .chat-side__header
+      .chat-side__header__box
+        %h3.chat-side__header__box__user-name 
+          jku
+        %ul.chat-side__header__box__menu
+          %li.chat-side__header__box__menu__new-group
+            %a
+            -# {:href => "/groups/new"}
+            %i.fa.fa-edit
+          %li.chat-side__header__box__menu__edit-user
+            %a
+            -# {:href => "/users/1559/edit"}
+            %i.fa.fa-cog
+    .chat-side__groups
+      .chat-side__group
+        .chat-side__group__group-name
+          グループD
+        .chat-side__group__latest-message
+          まだメッセージがありません
+      .chat-side__group    
+        .chat-side__group__group-name
+          グループQ
+        .chat-side__group__latest-message
+          まっきー
+  .chat-main
+    .chat-main__header
+      .main-header__left-box
+        .main-header__left-box__current-group
+          グループD
+        .main-header__left-box__member-list
+          Member jku
+      .main-header__edit-btn
+        Edit
+
+    .chat-main__messages
+      .chat-main__messages__message
+        .chat-main__messages__message__upper-info
+          .chat-main__messages__message__upper-info__talker
+            セバスチャン
+          .chat-main__messages__message__upper-info__date 
+            2019/10/24(Thu) 13:20:55
+        .chat-main__messages__message__text
+          おおお
+
+      .chat-main__messages__message
+        .chat-main__messages__message__upper-info
+          .chat-main__messages__message__upper-info__talker
+            ロバート秋山
+          .chat-main__messages__message__upper-info__date 
+            2019/10/31(Thr)23:33
+        .chat-main__messages__message__text
+          梅宮辰夫の体モノマネ
+          
+    .chat-main__form
+      
+      .chat-main__form__suika
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.chat-main__form__suika__image
+          %i.fa.fa-image
+
+        %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+        
+
