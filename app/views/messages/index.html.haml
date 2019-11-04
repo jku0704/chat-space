@@ -7,32 +7,32 @@
           jku
         %ul.chat-side__header__box__menu
           %li.chat-side__header__box__menu__new-group
-            %a
+            %link_to
             -# {:href => "/groups/new"}
             %i.fa.fa-edit
           %li.chat-side__header__box__menu__edit-user
-            %a
+            %link_to
             -# {:href => "/users/1559/edit"}
             %i.fa.fa-cog
     .chat-side__groups
-      .chat-side__group
-        .chat-side__group__group-name
+      .chat-side__groups__group
+        .chat-side__groups__group__group-name
           グループD
-        .chat-side__group__latest-message
+        .chat-side__groups__group__latest-message
           まだメッセージがありません
-      .chat-side__group    
-        .chat-side__group__group-name
+      .chat-side__groups__group
+        .chat-side__groups__group__group-name
           グループQ
-        .chat-side__group__latest-message
+        .chat-side__groups__group__latest-message
           まっきー
   .chat-main
     .chat-main__header
-      .main-header__left-box
-        .main-header__left-box__current-group
+      .chat-main__header__left-box
+        .chat-main__header__left-box__current-group
           グループD
-        .main-header__left-box__member-list
+        .chat-main__header__left-box__member-list
           Member jku
-      .main-header__edit-btn
+      .chat-main__header__edit-btn
         Edit
 
     .chat-main__messages
@@ -57,10 +57,10 @@
     .chat-main__form
       
       .chat-main__form__suika
-        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
         %label.chat-main__form__suika__image
           %i.fa.fa-image
 
-        %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
         
 
