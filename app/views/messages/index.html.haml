@@ -1,30 +1,5 @@
 .wrapper
-
-  .chat-side
-    .chat-side__header
-      .chat-side__header__box
-        %h3.chat-side__header__box__user-name 
-          jku
-        %ul.chat-side__header__box__menu
-          %li.chat-side__header__box__menu__new-group
-            %link_to
-            -# {:href => "/groups/new"}
-            %i.fa.fa-edit
-          %li.chat-side__header__box__menu__edit-user
-            %link_to
-            -# {:href => "/users/1559/edit"}
-            %i.fa.fa-cog
-    .chat-side__groups
-      .chat-side__groups__group
-        .chat-side__groups__group__group-name
-          グループD
-        .chat-side__groups__group__latest-message
-          まだメッセージがありません
-      .chat-side__groups__group
-        .chat-side__groups__group__group-name
-          グループQ
-        .chat-side__groups__group__latest-message
-          まっきー
+  = render 'shared/side_bar' 
   .chat-main
     .chat-main__header
       .chat-main__header__left-box
@@ -54,13 +29,11 @@
         .chat-main__messages__message__text
           梅宮辰夫の体モノマネ
           
-    .chat-main__form
-      
-      .chat-main__form__suika
-        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-        %label.chat-main__form__suika__image
-          %i.fa.fa-image
-
-        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
-        
-
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

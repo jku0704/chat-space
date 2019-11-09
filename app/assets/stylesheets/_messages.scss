@@ -1,3 +1,4 @@
+@import "config/colors";
 .wrapper{
   display: flex;
 
@@ -5,8 +6,6 @@
     width: 300px;
     color: white;
     float: left;
-    
-  
     &__header{
       background-color: #253141;
       padding: 0 20px;
@@ -51,7 +50,6 @@
           font-size: 15px;
           margin-bottom: 5px;
         }
-        
         &__latest-message {
         font-size: 11px;
         }
@@ -90,94 +88,73 @@
         color: #38aef0;
       } 
     }
-      .chat-main__messages{
+    .chat-main__messages{
       background-color: #fafafafa;
       
       height: calc(100% - 320px);
       overflow: scroll;
       padding: 46px 40px;
 
-        &__message{
-          padding-bottom: 40px;
-        }
-        
-        &__message__upper-info{
-          margin-bottom: 10px;
-          display: flex;
-        }
-          
-        &__message__upper-info__talker{
-        color: #434a54;
-        font-size: 16px;
-        font-weight: bold;
-        }
-        &__message__upper-info__date {
-          color: #999999;
-          font-size: 12px;
-          margin-left: 10px;
-        }
-        &__message__text{
-          color: #434a54;
-          font-size: 14px;
-          margin-bottom: 10px
-        }
-      } 
-    }
-    .chat-main__form{
-      height: 90px;
-      padding: 20px 40px;
-      background-color: #ddd;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-      
-      
-
-      
-      &__suika {
-        height: 50px;
-        width: 100%;
-        color: #434a54;
-        line-height: 90px;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        
-        .input-box__text{
-          height: 50px;
-          width: 100%;
-          padding: 0 40px 0 10px;
-          color: #434a54;
-          border-style: none;
-          position: relative;
-          
-        }
-        &__image{
-          position: absolute;
-          right: 160px;
-          i{
-          
-          }
-        }
-        .submit-btn{
-          width: 100px;
-          height: 50px;
-          padding: 0 30px;
-          margin-left: 15px;
-          background-color: #38aef0;
-          color: white;
-          cursor: pointer;
-
-        }
+      &__message{
+        padding-bottom: 40px;
       }
       
-      
-      
-
+      &__message__upper-info{
+        margin-bottom: 10px;
+        display: flex;
+      }
+        
+      &__message__upper-info__talker{
+      color: #434a54;
+      font-size: 16px;
+      font-weight: bold;
+      }
+      &__message__upper-info__date {
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+      &__message__text{
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 10px
+      }
+    } 
+    .form {
+      background-color: #DDDDDD;
+      box-sizing: border-box;
+      height: 90px;
+      padding: 20px 50px 20px 40px;
+      &__message {
+        border: none;
+        float: left;
+        height: 50px;
+        width: calc(100% - 150px);
+      }
+      &__mask {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
+        }
+        .hidden {
+          display: none;
+        }
+      }
+      &__submit {
+        background-color: $light_blue;
+        border: none;
+        color: $white;
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
     }
-
   }
+}
  
