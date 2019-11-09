@@ -4,16 +4,16 @@
     .chat-side__header
       .chat-side__header__box
         %h3.chat-side__header__box__user-name 
-          jku
+          = current_user.name
         %ul.chat-side__header__box__menu
           %li.chat-side__header__box__menu__new-group
             %link_to
             -# {:href => "/groups/new"}
             %i.fa.fa-edit
           %li.chat-side__header__box__menu__edit-user
-            %link_to
+            %link_to edit_user_path(current_user) do
             -# {:href => "/users/1559/edit"}
-            %i.fa.fa-cog
+            = fa_icon 'cog', class: 'icon'
     .chat-side__groups
       .chat-side__groups__group
         .chat-side__groups__group__group-name
