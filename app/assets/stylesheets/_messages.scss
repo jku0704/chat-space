@@ -90,35 +90,37 @@
     }
     .chat-main__messages{
       background-color: #fafafafa;
+    
       
-      height: calc(100% - 320px);
+      height: calc(100vh - 260px);
       overflow: scroll;
       padding: 46px 40px;
 
-      &__message{
-        padding-bottom: 40px;
+      .message{
+        
+      
+        .upper-message{
+          padding-bottom: 10px;          
+          display: flex;
+        }
+          .upper-message__name{
+            color: #434a54;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .upper-message__date{
+            color: #999999;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+        .lower-message{
+          color: #434a54;
+          font-size: 14px;
+          margin-bottom: 10px
+
+        }
       }
       
-      &__message__upper-info{
-        margin-bottom: 10px;
-        display: flex;
-      }
-        
-      &__message__upper-info__talker{
-      color: #434a54;
-      font-size: 16px;
-      font-weight: bold;
-      }
-      &__message__upper-info__date {
-        color: #999999;
-        font-size: 12px;
-        margin-left: 10px;
-      }
-      &__message__text{
-        color: #434a54;
-        font-size: 14px;
-        margin-bottom: 10px
-      }
     } 
     .form {
       background-color: #DDDDDD;
