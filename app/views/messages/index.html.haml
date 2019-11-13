@@ -12,23 +12,24 @@
         Edit
 
     .chat-main__messages
-      .chat-main__messages__message
-        .chat-main__messages__message__upper-info
-          .chat-main__messages__message__upper-info__talker
-            セバスチャン
-          .chat-main__messages__message__upper-info__date 
-            2019/10/24(Thu) 13:20:55
-        .chat-main__messages__message__text
-          おおお
+      = render partial: 'message', collection: @messages
+      -# .chat-main__messages__message
+      -#   .chat-main__messages__message__upper-info
+      -#     .chat-main__messages__message__upper-info__talker
+      -#       セバスチャン
+      -#     .chat-main__messages__message__upper-info__date 
+      -#       2019/10/24(Thu) 13:20:55
+      -#   .chat-main__messages__message__text
+      -#     おおお
 
-      .chat-main__messages__message
-        .chat-main__messages__message__upper-info
-          .chat-main__messages__message__upper-info__talker
-            ロバート秋山
-          .chat-main__messages__message__upper-info__date 
-            2019/10/31(Thr)23:33
-        .chat-main__messages__message__text
-          梅宮辰夫の体モノマネ
+      -# .chat-main__messages__message
+      -#   .chat-main__messages__message__upper-info
+      -#     .chat-main__messages__message__upper-info__talker
+      -#       ロバート秋山
+      -#     .chat-main__messages__message__upper-info__date 
+      -#       2019/10/31(Thr)23:33
+      -#   .chat-main__messages__message__text
+      -#     梅宮辰夫の体モノマネ
           
     .form
       = form_for [@group, @message] do |f|
