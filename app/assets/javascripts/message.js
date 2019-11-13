@@ -1,7 +1,6 @@
 $(function(){
 function buildMessage(message){
-  console.log(message)
-  // var message = message.jmessage ? `${ message.jmessage }` : "";
+  
   var image = message.jimage ? `<img src= ${ message.jimage } class="lower-message__image">` : "";
   var html = `<div class="message">
                 <div class="upper-message">
@@ -39,10 +38,8 @@ function buildMessage(message){
       processData: false,
       contentType: false,
     })
-    .done(function(message){
-      // console.log(message);
+    .done(function(message){     
       var html = buildMessage(message);
-      // console.log('good2');
       $('.chat-main__messages').append(html);
       $('form_message')[0].reset();
       $('.form__submit').prop('disabled', false);
