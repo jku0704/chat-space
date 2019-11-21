@@ -42,15 +42,7 @@ $(function(){
     var search_list = $("#user-search-result");
     var member_list = $("#member-append");
 
-    // function addUser(user){
-    //   var html = `
-    //         <div class="chat-group-user clearfix">
-    //         <p class="chat-group-user__name">${user.name}</p>
-    //         <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</div>
-    //     </div>
-    //   `;
-    //     search_list.append(html);
-    // }
+   
 
     function appendErrMsgToHTML(msg){
         var html = `
@@ -74,23 +66,6 @@ $(function(){
     .done(function(users){             // usersにjson形式のuser変数が代入される。複数形なので配列型で入ってくる
     
         
-        // if (input.length === 0) {         // フォームの文字列長さが0であれば、インクリメンタルサーチ結果を表示しないようにする
-        //     $('#user-search-result').empty();
-        
-        // }
-
-        // else if (input.length !== 0){     // 値が等しくないもしくは型が等しくなければtrueを返す。
-        //     $('#user-search-result').empty();
-        //     users.forEach(function(user){ // users情報をひとつずつとりだしてuserに代入
-        //         appendUser(user)
-        //     });
-        // }
-
-        // else {
-        //     $('#user-search-result').empty(); // ユーザーが見つからなければ「見つからない」を返す。
-        //     appendErrMsgToHTML("一致するユーザーが見つかりません");
-        //     addNoUser()
-        // }
 
         if(input.length == 0) { 
             $('#user-search-result').empty();
@@ -121,10 +96,7 @@ $(function(){
     
   
   });
-//追加ボタンが押されたときに検索結果から削除（メンバー・追加）して、メンバーに追加する（メンバー・削除）。
-// １イベントが発火（追加ボタンが押される）したときにデバッグ（コンソールログでハロー）
-// ２イベントが発火したときにメンバー・追加を検索結果から削除する
-// ３メンバーに追加する（削除ボタン右側にある状態）。
+
 $(document).on("click", ".chat-group-user__btn--add", function() {
     
     const userName = $(this).attr("data-user-name");
