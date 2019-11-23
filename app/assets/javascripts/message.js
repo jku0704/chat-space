@@ -83,5 +83,5 @@ $(function(){
       });
     }
   };
-    setInterval(reloadMessages, 3000);//50000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
+   setInterval(reloadMessages, 50000);//50000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
 });  
