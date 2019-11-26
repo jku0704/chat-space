@@ -17,27 +17,30 @@ $(function(){
     `;
     $("#user-search-result").append(html);
   }
+
+
   function addDeleteUser(name, id) {
     let html = `
-    <div class="ChatMember clearfix" id="${id}">
-      <input name='group[user_ids][]' type='hidden' value=${id}>  //この記述によりuserがDBに保存される
-      <p class="ChatMember__name">${name}</p>
-        <div class="ChatMember__remove ChatMember__button" data-user-id=${id} data-user-name=${name}>削除</div>
-    </div>`;
-    $(".ChatMembers").append(html);
+    <div class="chat-group-user clearfix" id="${id}">
+      <input name='group[user_ids][]' type='hidden' value=${id}>
+      <div class="chat-group-user clearfix">${name}
+        <div class="chat-group-user__remove chat-group-user__btn chat-group-user__btn--remove" data-user-id=${id} data-user-name=${name}>削除</div>
+      </div>
+    </div>
+    `;
+    $("#chat-group-users").append(html);
   }
 
 
-  function addMember(id, name) {
-    let html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-8">
-    <input value="${id}" name="group[user_ids][]" type="hidden" id="${id}">
-    <p class="ChatMember__name">${name}</p>
-    <p class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn">
-    削除</p>
-    </div>`;
+  // function addMember(id, name) {
+  //   let html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-8">
+  //   <input value="${id}" name="group[user_ids][]" type="hidden" id="${id}">
+  //   <p class="ChatMember__name">${name}</p>
+  //   <div clasxs="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn">削除</div>
+  //   </div>`;
 
-    $(`#chat-group-users`).append(html)
-  }
+  //   $(`#chat-group-users`).append(html)
+  // }
     
     var search_list = $("#user-search-result");
     var member_list = $("#member-append");
@@ -105,8 +108,9 @@ $(document).on("click", ".chat-group-user__btn--add", function() {
     $(this)
       .parent()
       .remove();
+
     addDeleteUser(userName, userId);
-    addMember(userId, userName);
+    // addMember(userId, userName);
   });
   $(document).on("click", ".chat-group-user__btn--remove", function() {
     $(this)

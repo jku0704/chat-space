@@ -5,17 +5,18 @@ $(function(){
     var html = `<div class="message" data-message-id = ${message.id}>
                   <div class="upper-message">
                     <div class="upper-message__name">
-                    ${message.jusername}
+                      ${message.jusername}
                     </div>
                     <div class="upper-message__date">
-                    ${message.jdate}
+                      ${message.jdate}
                     </div>
-                    <div class="image">
-                    ${image}
-                    </div> 
                   </div>
+                  
                   <div class="lower-message">
+                    <p class="lower-message__content"> 
                     ${message.jmessage}
+                    </p>
+                    ${image}
                   </div>
                 
                 </div>
