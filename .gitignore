@@ -1,4 +1,4 @@
 /log/*
 /tmp/*
-/carrierwave/*
-/public/uploads/* 
+/carrierwave/*  
+config/secrets.yml
