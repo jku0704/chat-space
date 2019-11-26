@@ -6,10 +6,17 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    
 
     .account-page__inner--left, .account-page__inner--right {
       float: left;
       width: 50%;
+      &__.actions{
+      margin-top: 20px;
+      color: #fff;
+      background-color: #ccc;
+      font-size: 14px;
+      }
     }
     &:after {
       clear: both;

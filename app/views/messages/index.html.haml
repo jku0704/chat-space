@@ -5,11 +5,13 @@
     .chat-main__header
       .chat-main__header__left-box
         .chat-main__header__left-box__current-group
-          グループD
+          = @group.name
         .chat-main__header__left-box__member-list
-          Member jku
+          Member:
+          - @group.users.each do |user|
+            = user.name
       .chat-main__header__edit-btn
-        Edit
+        = link_to 'Edit', edit_group_path(@group)
 
     .chat-main__messages
       = render partial: 'message', collection: @messages
@@ -17,7 +19,7 @@
           
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__message', placeholder: ' type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
