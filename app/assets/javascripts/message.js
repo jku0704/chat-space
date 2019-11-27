@@ -39,7 +39,8 @@ $(function(){
       processData: false,
       contentType: false,
     })
-    .done(function(message){    
+    .done(function(message){   
+      console.log(message) 
       var html = buildMessage(message);
       $('.chat-main__messages').append(html);
       $('.new_message')[0].reset();
@@ -84,5 +85,5 @@ $(function(){
       });
     }
   };
-   setInterval(reloadMessages, 50000);//50000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
+   setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
 });  

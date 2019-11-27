@@ -111,7 +111,7 @@ $(document).on("click", ".chat-group-user__btn--add", function() {
 
     addDeleteUser(userName, userId);
     addMember(userName, userId,);
-  });
+});
   $(document).on("click", ".chat-group-user__btn--remove", function() {
     $(this)
       .parent()
